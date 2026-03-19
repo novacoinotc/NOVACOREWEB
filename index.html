@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novacore — Plataforma de Core Bancario para Instituciones Financieras</title>
+    <meta name="description" content="Core bancario cloud-native para instituciones financieras en México y LATAM. Cuentas, pagos SPEI, lending, tarjetas, compliance, analytics y más desde una sola plataforma.">
+    <meta name="keywords" content="core bancario, fintech, SPEI, pagos, banking as a service, BaaS, México, LATAM, API banking">
+    <meta property="og:title" content="Novacore — Core Bancario Cloud-Native">
+    <meta property="og:description" content="La plataforma de infraestructura bancaria que potencia a las instituciones financieras de nueva generación.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav__container">
+            <a href="/" class="nav__logo">
+                <div class="nav__logo-hex">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M20 4L34 12V28L20 36L6 28V12L20 4Z" stroke="url(#lg)" stroke-width="1.5" fill="none"/>
+                        <path d="M15 17L20 13L25 17V23L20 27L15 23Z" fill="url(#lg)"/>
+                        <defs><linearGradient id="lg" x1="6" y1="4" x2="34" y2="36"><stop stop-color="#ff8800"/><stop offset="1" stop-color="#ff2f5f"/></linearGradient></defs>
+                    </svg>
+                </div>
+                <span>Nova<em>core</em></span>
+            </a>
+            <div class="nav__links" id="navLinks">
+                <a href="#platform" class="nav__link">Plataforma</a>
+                <a href="#modules" class="nav__link">Módulos</a>
+                <a href="#api" class="nav__link">API</a>
+                <a href="#security" class="nav__link">Seguridad</a>
+                <a href="#compliance" class="nav__link">Compliance</a>
+                <a href="#pricing" class="nav__link">Planes</a>
+                <a href="#contact" class="nav__link">Contacto</a>
+            </div>
+            <a href="#contact" class="nav__cta">Solicitar demo</a>
+            <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero__bg">
+            <canvas id="heroCanvas"></canvas>
+            <div class="hero__orb hero__orb--1"></div>
+            <div class="hero__orb hero__orb--2"></div>
+        </div>
+        <div class="hero__inner">
+            <div class="hero__content">
+                <div class="hero__badge anim">
+                    <span class="hero__badge-dot"></span>
+                    Core bancario cloud-native en producción
+                </div>
+                <h1 class="hero__title anim">
+                    La infraestructura bancaria<br>
+                    <span class="grad-text">de nueva generación</span>
+                </h1>
+                <p class="hero__sub anim">
+                    Plataforma completa de core bancario para instituciones financieras. Cuentas, pagos SPEI, lending, tarjetas, compliance, analytics y treasury — todo desde una sola API.
+                </p>
+                <div class="hero__actions anim">
+                    <a href="#contact" class="btn btn--primary">
+                        <span>Solicitar demo</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="#modules" class="btn btn--glass">Explorar módulos</a>
+                </div>
+                <div class="hero__metrics anim">
+                    <div class="hero__metric">
+                        <span class="hero__metric-num">&lt;3s</span>
+                        <span class="hero__metric-label">Latencia SPEI</span>
+                    </div>
+                    <div class="hero__metric">
+                        <span class="hero__metric-num">99.99%</span>
+                        <span class="hero__metric-label">Uptime SLA</span>
+                    </div>
+                    <div class="hero__metric">
+                        <span class="hero__metric-num">10K+</span>
+                        <span class="hero__metric-label">TPS capacidad</span>
+                    </div>
+                    <div class="hero__metric">
+                        <span class="hero__metric-num">ISO 27001</span>
+                        <span class="hero__metric-label">Certificado</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__illustration anim">
+                <svg viewBox="0 0 460 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="heroGrad" x1="0" y1="0" x2="460" y2="400">
+                            <stop stop-color="#ff8800"/>
+                            <stop offset="1" stop-color="#ff2f5f"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="230" cy="200" r="180" stroke="url(#heroGrad)" stroke-width="0.5" fill="none" class="hero-pulse-ring" opacity="0.06"/>
+                    <circle cx="230" cy="200" r="145" stroke="url(#heroGrad)" stroke-width="0.5" fill="none" class="hero-pulse-ring" style="animation-delay:-1.3s" opacity="0.04"/>
+                    <circle cx="230" cy="200" r="110" stroke="url(#heroGrad)" stroke-width="0.4" fill="none" class="hero-pulse-ring" style="animation-delay:-2.6s" opacity="0.03"/>
+                    <g class="hero-float--1 hero-float">
+                        <rect x="140" y="60" width="180" height="54" rx="8" stroke="url(#heroGrad)" stroke-width="1.2" fill="rgba(255,136,0,0.03)" class="svg-draw" style="--len:468"/>
+                        <line x1="155" y1="74" x2="290" y2="74" stroke="rgba(255,136,0,0.08)" stroke-width="0.5"/>
+                        <line x1="155" y1="84" x2="290" y2="84" stroke="rgba(255,136,0,0.08)" stroke-width="0.5"/>
+                        <line x1="155" y1="94" x2="290" y2="94" stroke="rgba(255,136,0,0.08)" stroke-width="0.5"/>
+                        <circle cx="300" cy="74" r="3" fill="#ff8800" class="svg-blink" opacity="0.8"/>
+                        <circle cx="310" cy="74" r="3" fill="#ff2f5f" class="svg-blink" style="animation-delay:-0.5s" opacity="0.6"/>
+                        <circle cx="300" cy="87" r="2.5" fill="#28ca42" class="svg-blink" style="animation-delay:-1s" opacity="0.7"/>
+                    </g>
+                    <g class="hero-float--2 hero-float">
+                        <rect x="140" y="130" width="180" height="54" rx="8" stroke="url(#heroGrad)" stroke-width="1.2" fill="rgba(255,136,0,0.03)" class="svg-draw" style="--len:468;animation-delay:0.2s"/>
+                        <line x1="155" y1="144" x2="290" y2="144" stroke="rgba(255,136,0,0.08)" stroke-width="0.5"/>
+                        <line x1="155" y1="154" x2="290" y2="154" stroke="rgba(255,136,0,0.08)" stroke-width="0.5"/>
+                        <line x1="155" y1="164" x2="290" y2="164" stroke="rgba(255,136,0,0.08)" stroke-width="0.5"/>
+                        <circle cx="300" cy="144" r="3" fill="#ff8800" class="svg-blink" style="animation-delay:-0.3s" opacity="0.8"/>
+                        <circle cx="310" cy="144" r="3" fill="#28ca42" class="svg-blink" style="animation-delay:-0.9s" opacity="0.6"/>
+                    </g>
+                    <g class="hero-float--3 hero-float">
+                        <rect x="140" y="200" width="180" height="54" rx="8" stroke="url(#heroGrad)" stroke-width="1.2" fill="rgba(255,136,0,0.03)" class="svg-draw" style="--len:468;animation-delay:0.4s"/>
+                        <line x1="155" y1="214" x2="290" y2="214" stroke="rgba(255,136,0,0.08)" stroke-width="0.5"/>
+                        <line x1="155" y1="224" x2="290" y2="224" stroke="rgba(255,136,0,0.08)" stroke-width="0.5"/>
+                        <line x1="155" y1="234" x2="290" y2="234" stroke="rgba(255,136,0,0.08)" stroke-width="0.5"/>
+                        <circle cx="300" cy="214" r="3" fill="#28ca42" class="svg-blink" style="animation-delay:-0.6s" opacity="0.8"/>
+                        <circle cx="310" cy="214" r="3" fill="#ff8800" class="svg-blink" style="animation-delay:-1.2s" opacity="0.6"/>
+                    </g>
+                    <path d="M230 114 L230 130" stroke="url(#heroGrad)" stroke-width="1" class="svg-flow" opacity="0.4"/>
+                    <path d="M230 184 L230 200" stroke="url(#heroGrad)" stroke-width="1" class="svg-flow" opacity="0.4"/>
+                    <g class="hero-float--1 hero-float" opacity="0.7">
+                        <rect x="16" y="80" width="105" height="28" rx="6" fill="rgba(255,136,0,0.04)" stroke="rgba(255,136,0,0.12)" stroke-width="0.7"/>
+                        <text x="24" y="98" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#ff8800" opacity="0.8">032180...</text>
+                        <text x="74" y="98" font-family="JetBrains Mono, monospace" font-size="5" fill="rgba(255,136,0,0.4)">CLABE</text>
+                    </g>
+                    <g class="hero-float--2 hero-float" opacity="0.7">
+                        <circle cx="380" cy="95" r="20" fill="rgba(255,47,95,0.04)" stroke="rgba(255,47,95,0.12)" stroke-width="0.7"/>
+                        <path d="M372 95 L388 95 M383 89 L389 95 L383 101" stroke="#ff2f5f" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+                        <text x="380" y="122" font-family="Inter, sans-serif" font-size="6" fill="rgba(255,47,95,0.5)" text-anchor="middle">SPEI</text>
+                    </g>
+                    <g class="hero-float--3 hero-float" opacity="0.7">
+                        <circle cx="60" cy="210" r="22" fill="rgba(255,136,0,0.04)" stroke="rgba(255,136,0,0.12)" stroke-width="0.7"/>
+                        <text x="60" y="217" font-family="Inter, sans-serif" font-size="18" fill="#ff8800" opacity="0.6" text-anchor="middle" font-weight="600">$</text>
+                    </g>
+                    <g class="hero-float--1 hero-float" opacity="0.6">
+                        <rect x="350" y="200" width="60" height="24" rx="6" fill="rgba(255,47,95,0.04)" stroke="rgba(255,47,95,0.1)" stroke-width="0.6"/>
+                        <text x="380" y="216" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff2f5f" opacity="0.6" text-anchor="middle">MXN</text>
+                    </g>
+                    <circle r="2" fill="#ff8800" opacity="0.7">
+                        <animateMotion dur="2.5s" repeatCount="indefinite" path="M230 60 L230 254"/>
+                    </circle>
+                    <circle r="1.8" fill="#ff2f5f" opacity="0.6">
+                        <animateMotion dur="3s" repeatCount="indefinite" path="M210 254 L210 60" begin="0.8s"/>
+                    </circle>
+                    <g opacity="0.5">
+                        <rect x="140" y="270" width="180" height="20" rx="4" fill="rgba(255,136,0,0.02)" stroke="rgba(255,136,0,0.08)" stroke-width="0.5"/>
+                        <circle cx="152" cy="280" r="2.5" fill="#28ca42" class="svg-blink" style="animation-delay:-0.4s" opacity="0.8"/>
+                        <text x="160" y="283" font-family="JetBrains Mono, monospace" font-size="5.5" fill="rgba(255,136,0,0.4)">NOVACORE v3.0 &#8212; ALL SYSTEMS OPERATIONAL</text>
+                    </g>
+                    <path d="M230 310 L290 340 L290 380 L230 400 L170 380 L170 340 Z" stroke="url(#heroGrad)" stroke-width="0.6" fill="rgba(255,136,0,0.015)" opacity="0.4"/>
+                    <circle cx="230" cy="355" r="3" fill="url(#heroGrad)" opacity="0.3" class="svg-blink" style="animation-delay:-0.7s"/>
+                    <path d="M230 290 L230 310" stroke="url(#heroGrad)" stroke-width="0.7" class="svg-flow" opacity="0.25"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUSTED BY -->
+    <section class="trusted">
+        <div class="container">
+            <p class="trusted__label anim">Infraestructura que potencia instituciones financieras reguladas</p>
+            <div class="trusted__logos anim">
+                <div class="trusted__logo">SOFIPO</div>
+                <div class="trusted__logo">SOFOM</div>
+                <div class="trusted__logo">Neobancos</div>
+                <div class="trusted__logo">Fintechs</div>
+                <div class="trusted__logo">Exchanges</div>
+                <div class="trusted__logo">Remesas</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLATFORM OVERVIEW -->
+    <section class="platform" id="platform">
+        <div class="container">
+            <div class="platform__grid">
+                <div class="platform__content anim">
+                    <span class="tag">Plataforma</span>
+                    <h2 class="title-lg">El núcleo bancario<br><span class="grad-text">más completo de LATAM</span></h2>
+                    <p>Novacore es una plataforma de core bancario cloud-native diseñada para instituciones financieras que necesitan velocidad, escalabilidad y cumplimiento regulatorio desde el día uno.</p>
+                    <p>Construido sobre una arquitectura de microservicios con ledger de doble entrada inmutable, Novacore procesa millones de transacciones diarias con latencia sub-segundo y disponibilidad del 99.99%.</p>
+                    <p>Desde cuentas y pagos hasta lending, tarjetas y treasury — cada módulo se integra nativamente y se configura sin código a través de nuestro Product Builder.</p>
+                    <div class="platform__features">
+                        <div class="platform__feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            <span>Arquitectura de microservicios</span>
+                        </div>
+                        <div class="platform__feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg>
+                            <span>Ledger de doble entrada inmutable</span>
+                        </div>
+                        <div class="platform__feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>Multi-tenant con aislamiento total</span>
+                        </div>
+                        <div class="platform__feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>Event-driven en tiempo real</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="platform__stats anim">
+                    <div class="stat-card">
+                        <span class="stat-card__num">&lt;3s</span>
+                        <span class="stat-card__label">Procesamiento SPEI</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-card__num">99.99%</span>
+                        <span class="stat-card__label">Uptime garantizado</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-card__num">10K+</span>
+                        <span class="stat-card__label">Transacciones/segundo</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-card__num">50+</span>
+                        <span class="stat-card__label">Endpoints de API</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-card__num">28</span>
+                        <span class="stat-card__label">Permisos granulares</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-card__num">24/7</span>
+                        <span class="stat-card__label">Monitoreo y soporte</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ART -->
+    <div class="section-art">
+        <svg viewBox="0 0 1200 80" fill="none" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="divGrad1" x1="0" y1="40" x2="1200" y2="40">
+                    <stop stop-color="#ff8800" stop-opacity="0"/>
+                    <stop offset="0.3" stop-color="#ff8800" stop-opacity="0.4"/>
+                    <stop offset="0.7" stop-color="#ff2f5f" stop-opacity="0.4"/>
+                    <stop offset="1" stop-color="#ff2f5f" stop-opacity="0"/>
+                </linearGradient>
+            </defs>
+            <path d="M0 30 Q300 30 600 40 Q900 50 1200 40" stroke="url(#divGrad1)" stroke-width="0.8" fill="none" class="svg-flow" style="stroke-dasharray:12 8"/>
+            <path d="M0 50 Q300 40 600 45 Q900 50 1200 40" stroke="url(#divGrad1)" stroke-width="0.5" fill="none" class="svg-flow" style="stroke-dasharray:6 10;animation-delay:-0.5s"/>
+            <circle r="2" fill="#ff8800" opacity="0.6">
+                <animateMotion dur="4s" repeatCount="indefinite" path="M0 30 Q300 30 600 40 Q900 50 1200 40"/>
+            </circle>
+        </svg>
+    </div>
+
+    <!-- MODULES -->
+    <section class="modules" id="modules">
+        <div class="container">
+            <div class="section-head anim">
+                <span class="tag">Módulos</span>
+                <h2 class="title-lg">Todo lo que necesitas<br><span class="grad-text">en una sola plataforma</span></h2>
+                <p class="subtitle">10 módulos integrados que cubren el ciclo completo de operaciones bancarias. Activa solo los que necesitas.</p>
+            </div>
+
+            <div class="mod-grid">
+                <!-- Module 1: Account Management -->
+                <div class="mod-card anim">
+                    <div class="mod-card__header">
+                        <div class="mod-card__icon">
+                            <svg viewBox="0 0 32 32" fill="none"><rect x="6" y="6" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5" opacity="0.6"/><path d="M12 12h8M12 17h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <span class="mod-card__badge">Core</span>
+                    </div>
+                    <h3>Gestión de Cuentas</h3>
+                    <p>Crea y administra cuentas CLABE, cuentas virtuales, sub-cuentas y cuentas concentradoras. Multi-divisa con soporte para MXN y USD.</p>
+                    <ul class="mod-card__list">
+                        <li>Cuentas CLABE propias (18 dígitos)</li>
+                        <li>Cuentas virtuales y sub-cuentas ilimitadas</li>
+                        <li>Jerarquía de cuentas (padre-hijo)</li>
+                        <li>Sweeping automático y zero-balance</li>
+                        <li>Estados de cuenta MT940/camt.053</li>
+                        <li>Ciclo de vida completo (apertura → cierre)</li>
+                    </ul>
+                    <div class="mod-card__tags"><span>CLABE</span><span>Multi-divisa</span><span>Virtual</span></div>
+                </div>
+
+                <!-- Module 2: Payment Processing -->
+                <div class="mod-card anim">
+                    <div class="mod-card__header">
+                        <div class="mod-card__icon">
+                            <svg viewBox="0 0 32 32" fill="none"><path d="M8 22l8-14 8 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 28h24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/></svg>
+                        </div>
+                        <span class="mod-card__badge">Core</span>
+                    </div>
+                    <h3>Procesamiento de Pagos</h3>
+                    <p>Motor de pagos SPEI en tiempo real. Envía y recibe transferencias, dispersiones masivas, pagos recurrentes y book transfers internos.</p>
+                    <ul class="mod-card__list">
+                        <li>SPEI IN — recepción en tiempo real con webhooks</li>
+                        <li>SPEI OUT — envío con grace period de 8 segundos</li>
+                        <li>Dispersiones masivas (batch de miles)</li>
+                        <li>Pagos programados y recurrentes</li>
+                        <li>Book transfers internos sin costo SPEI</li>
+                        <li>Conciliación automática con CEP</li>
+                    </ul>
+                    <div class="mod-card__tags"><span>SPEI</span><span>Batch</span><span>Real-time</span></div>
+                </div>
+
+                <!-- Module 3: Lending -->
+                <div class="mod-card anim">
+                    <div class="mod-card__header">
+                        <div class="mod-card__icon">
+                            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.5" opacity="0.6"/><path d="M13 13h6l-6 6h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="mod-card__badge">Módulo</span>
+                    </div>
+                    <h3>Crédito y Lending</h3>
+                    <p>Motor de originación y gestión de créditos. Desde personal hasta líneas de crédito revolvente, con scoring integrado y cobranza automatizada.</p>
+                    <ul class="mod-card__list">
+                        <li>Originación digital end-to-end</li>
+                        <li>Motor de scoring (reglas + ML)</li>
+                        <li>Amortización flexible (anualidad, lineal, bullet)</li>
+                        <li>Líneas de crédito revolventes</li>
+                        <li>Cobranza automatizada con dunning</li>
+                        <li>Cálculo de intereses (fijo, variable, mixto)</li>
+                    </ul>
+                    <div class="mod-card__tags"><span>Scoring</span><span>Originación</span><span>Cobranza</span></div>
+                </div>
+
+                <!-- Module 4: Cards -->
+                <div class="mod-card anim">
+                    <div class="mod-card__header">
+                        <div class="mod-card__icon">
+                            <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="16" rx="3" stroke="currentColor" stroke-width="1.5" opacity="0.6"/><path d="M4 14h24" stroke="currentColor" stroke-width="1.5"/><path d="M8 20h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/></svg>
+                        </div>
+                        <span class="mod-card__badge">Módulo</span>
+                    </div>
+                    <h3>Emisión de Tarjetas</h3>
+                    <p>Emite tarjetas físicas y virtuales, débito y prepago. Con tokenización Apple Pay/Google Pay y controles en tiempo real.</p>
+                    <ul class="mod-card__list">
+                        <li>Tarjetas físicas y virtuales (emisión instantánea)</li>
+                        <li>Débito, crédito y prepago</li>
+                        <li>Tokenización (Apple Pay, Google Pay)</li>
+                        <li>Controles: límites, geo-fence, MCC</li>
+                        <li>Bloqueo/desbloqueo en tiempo real</li>
+                        <li>3D Secure 2.0 y CVV dinámico</li>
+                    </ul>
+                    <div class="mod-card__tags"><span>Visa</span><span>Virtual</span><span>NFC</span></div>
+                </div>
+
+                <!-- Module 5: Payroll -->
+                <div class="mod-card anim">
+                    <div class="mod-card__header">
+                        <div class="mod-card__icon">
+                            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="14" r="6" stroke="currentColor" stroke-width="1.5" opacity="0.6"/><path d="M8 26c0-4 3.5-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.5"/></svg>
+                        </div>
+                        <span class="mod-card__badge">Módulo</span>
+                    </div>
+                    <h3>Nómina y Dispersiones</h3>
+                    <p>Gestión completa de nómina empresarial. Carga de empleados, cálculo por periodo, ejecución automática y reportes fiscales.</p>
+                    <ul class="mod-card__list">
+                        <li>Alta masiva de empleados (CSV/API)</li>
+                        <li>Cálculo automático por periodo</li>
+                        <li>Dispersión SPEI programada</li>
+                        <li>Multi-empresa y multi-sucursal</li>
+                        <li>Reportes para SAT y IMSS</li>
+                        <li>Recibos digitales CFDI</li>
+                    </ul>
+                    <div class="mod-card__tags"><span>Payroll</span><span>CFDI</span><span>Automatizado</span></div>
+                </div>
+
+                <!-- Module 6: Commissions -->
+                <div class="mod-card anim">
+                    <div class="mod-card__header">
+                        <div class="mod-card__icon">
+                            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.5" opacity="0.6"/><path d="M12 16h8M16 12v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <span class="mod-card__badge">Módulo</span>
+                    </div>
+                    <h3>Comisiones y Fees</h3>
+                    <p>Motor de comisiones configurable. Cobro automático por transacción, por volumen o en cascada con liquidación real.</p>
+                    <ul class="mod-card__list">
+                        <li>Comisiones en cascada multi-nivel</li>
+                        <li>Cobro automático sobre depósitos</li>
+                        <li>Fees: fijo, porcentual, tiered, mixto</li>
+                        <li>Liquidación como SPEI real</li>
+                        <li>Split de revenue automático</li>
+                        <li>Dashboard de revenue en tiempo real</li>
+                    </ul>
+                    <div class="mod-card__tags"><span>Cascada</span><span>Auto-cobro</span><span>Revenue</span></div>
+                </div>
+
+                <!-- Module 7: Treasury -->
+                <div class="mod-card anim">
+                    <div class="mod-card__header">
+                        <div class="mod-card__icon">
+                            <svg viewBox="0 0 32 32" fill="none"><path d="M6 26V12l10-8 10 8v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 26V18h4v8M18 26V16h4v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>
+                        </div>
+                        <span class="mod-card__badge">Avanzado</span>
+                    </div>
+                    <h3>Treasury y Liquidez</h3>
+                    <p>Gestión de tesorería y posición de liquidez en tiempo real. Cash pooling, forecasting y gestión de fondos interbancarios.</p>
+                    <ul class="mod-card__list">
+                        <li>Posición de caja en tiempo real</li>
+                        <li>Cash pooling físico y nocional</li>
+                        <li>Forecasting de liquidez (7-90 días)</li>
+                        <li>Monitoreo de liquidez intradía</li>
+                        <li>Gestión de reservas en Banxico</li>
+                        <li>Funds Transfer Pricing (FTP)</li>
+                    </ul>
+                    <div class="mod-card__tags"><span>Liquidez</span><span>Forecasting</span><span>ALM</span></div>
+                </div>
+
+                <!-- Module 8: FX -->
+                <div class="mod-card anim">
+                    <div class="mod-card__header">
+                        <div class="mod-card__icon">
+                            <svg viewBox="0 0 32 32" fill="none"><circle cx="12" cy="16" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.6"/><circle cx="20" cy="16" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.6"/><text x="10" y="19" font-size="7" fill="currentColor" font-weight="600">$</text><text x="19" y="19" font-size="7" fill="currentColor" font-weight="600">€</text></svg>
+                        </div>
+                        <span class="mod-card__badge">Módulo</span>
+                    </div>
+                    <h3>Cambio de Divisas (FX)</h3>
+                    <p>Motor de conversión multi-divisa con cotización en tiempo real, spreads configurables y ejecución automática.</p>
+                    <ul class="mod-card__list">
+                        <li>Cotización MXN/USD en tiempo real</li>
+                        <li>Spreads configurables por cliente/volumen</li>
+                        <li>Ejecución automática con best execution</li>
+                        <li>FX forwards y contratos a plazo</li>
+                        <li>Reportes de posición FX</li>
+                        <li>Integración con proveedores de liquidez</li>
+                    </ul>
+                    <div class="mod-card__tags"><span>Multi-divisa</span><span>Real-time</span><span>Spreads</span></div>
+                </div>
+
+                <!-- Module 9: Risk Management -->
+                <div class="mod-card anim">
+                    <div class="mod-card__header">
+                        <div class="mod-card__icon">
+                            <svg viewBox="0 0 32 32" fill="none"><path d="M16 4L4 9v6c0 7 5 13 12 15 7-2 12-8 12-15V9L16 4z" stroke="currentColor" stroke-width="1.5"/><path d="M12 16l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/></svg>
+                        </div>
+                        <span class="mod-card__badge">Avanzado</span>
+                    </div>
+                    <h3>Gestión de Riesgos</h3>
+                    <p>Monitoreo de riesgo crediticio, operacional y fraude en tiempo real. Modelos ML, alertas automáticas y reportes regulatorios.</p>
+                    <ul class="mod-card__list">
+                        <li>Detección de fraude en tiempo real (ML)</li>
+                        <li>Scoring crediticio behavioral</li>
+                        <li>Monitoreo de concentración de riesgo</li>
+                        <li>Stress testing y análisis de escenarios</li>
+                        <li>Early warning system (alerta temprana)</li>
+                        <li>Provisiones IFRS 9 / CNBV</li>
+                    </ul>
+                    <div class="mod-card__tags"><span>Fraude</span><span>ML</span><span>IFRS 9</span></div>
+                </div>
+
+                <!-- Module 10: Analytics -->
+                <div class="mod-card anim">
+                    <div class="mod-card__header">
+                        <div class="mod-card__icon">
+                            <svg viewBox="0 0 32 32" fill="none"><polyline points="4,28 10,18 16,22 22,10 28,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 28h24" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>
+                        </div>
+                        <span class="mod-card__badge">Avanzado</span>
+                    </div>
+                    <h3>Analytics y BI</h3>
+                    <p>Dashboards en tiempo real, reportes regulatorios automatizados y business intelligence con queries naturales.</p>
+                    <ul class="mod-card__list">
+                        <li>Dashboards operativos en tiempo real</li>
+                        <li>Reportes regulatorios (CNBV, Banxico, SAT)</li>
+                        <li>P&L por producto y por cliente</li>
+                        <li>Análisis de cohortes y retención</li>
+                        <li>Exportación PDF, Excel, API</li>
+                        <li>Alertas configurables por KPI</li>
+                    </ul>
+                    <div class="mod-card__tags"><span>BI</span><span>Real-time</span><span>CNBV</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section class="arch" id="architecture">
+        <div class="container">
+            <div class="section-head anim">
+                <span class="tag">Arquitectura</span>
+                <h2 class="title-lg">Construido para<br><span class="grad-text">escalar sin límites</span></h2>
+                <p class="subtitle">Arquitectura cloud-native con microservicios, event sourcing y ledger inmutable. Desplegado en múltiples regiones.</p>
+            </div>
+            <div class="arch__grid">
+                <div class="arch-card anim">
+                    <div class="arch-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 4L4 9v10l10 5 10-5V9L14 4z"/><path d="M4 9l10 5 10-5M14 14v10" opacity="0.4"/></svg></div>
+                    <h4>Microservicios</h4>
+                    <p>Cada módulo es un servicio independiente con su propia base de datos. Escala horizontalmente según demanda.</p>
+                </div>
+                <div class="arch-card anim">
+                    <div class="arch-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="4" width="20" height="20" rx="3"/><path d="M4 10h20M10 10v14M4 17h20"/></svg></div>
+                    <h4>Ledger inmutable</h4>
+                    <p>Doble entrada contable con append-only. Cada transacción es atómica, verificable y auditable en perpetuidad.</p>
+                </div>
+                <div class="arch-card anim">
+                    <div class="arch-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="14" cy="14" r="10"/><path d="M14 8v6l4 2"/><circle cx="14" cy="14" r="3" opacity="0.3"/></svg></div>
+                    <h4>Event sourcing</h4>
+                    <p>Cada cambio de estado genera un evento inmutable. Reconstruye el estado de cualquier entidad en cualquier momento.</p>
+                </div>
+                <div class="arch-card anim">
+                    <div class="arch-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 4h14l3 5H4l3-5z" opacity="0.4"/><path d="M4 9h20v13a2 2 0 01-2 2H6a2 2 0 01-2-2V9z"/><circle cx="14" cy="17" r="3"/></svg></div>
+                    <h4>Multi-cloud</h4>
+                    <p>Desplegado en AWS y GCP con active-active. RPO cercano a cero y RTO menor a 30 segundos.</p>
+                </div>
+                <div class="arch-card anim">
+                    <div class="arch-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 8h20M4 14h20M4 20h20" opacity="0.3"/><circle cx="8" cy="8" r="2" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="2" fill="currentColor" stroke="none"/><circle cx="20" cy="20" r="2" fill="currentColor" stroke="none"/></svg></div>
+                    <h4>Auto-scaling</h4>
+                    <p>Kubernetes con HPA. Escala de 100 a 10,000+ TPS automáticamente según la carga de trabajo.</p>
+                </div>
+                <div class="arch-card anim">
+                    <div class="arch-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 4v20M4 14h20"/><circle cx="14" cy="14" r="6" opacity="0.3"/><circle cx="14" cy="4" r="2" fill="currentColor" stroke="none"/><circle cx="14" cy="24" r="2" fill="currentColor" stroke="none"/><circle cx="4" cy="14" r="2" fill="currentColor" stroke="none"/><circle cx="24" cy="14" r="2" fill="currentColor" stroke="none"/></svg></div>
+                    <h4>Kafka streams</h4>
+                    <p>Event bus con Apache Kafka para comunicación asíncrona entre servicios. Garantía de entrega at-least-once.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API -->
+    <section class="api" id="api">
+        <div class="container">
+            <div class="section-head anim">
+                <span class="tag">Para desarrolladores</span>
+                <h2 class="title-lg">API-first por<br><span class="grad-text">diseño</span></h2>
+                <p class="subtitle">Más de 50 endpoints RESTful con documentación OpenAPI, SDKs en 5 lenguajes y sandbox completo para testing.</p>
+            </div>
+
+            <div class="api__grid anim">
+                <div class="api__content">
+                    <h3 class="api__section-title">Endpoints principales</h3>
+                    <div class="api__endpoints">
+                        <div class="api__endpoint"><span class="api__method">POST</span><code>/api/v1/accounts</code></div>
+                        <div class="api__endpoint"><span class="api__method">POST</span><code>/api/v1/payouts</code></div>
+                        <div class="api__endpoint"><span class="api__method api__method--get">GET</span><code>/api/v1/payouts/{id}</code></div>
+                        <div class="api__endpoint"><span class="api__method">POST</span><code>/api/v1/payouts/batch</code></div>
+                        <div class="api__endpoint"><span class="api__method api__method--get">GET</span><code>/api/v1/accounts/{id}/balance</code></div>
+                        <div class="api__endpoint"><span class="api__method api__method--put">PUT</span><code>/api/v1/accounts/{id}/freeze</code></div>
+                        <div class="api__endpoint"><span class="api__method">POST</span><code>/api/v1/loans/originate</code></div>
+                        <div class="api__endpoint"><span class="api__method">POST</span><code>/api/v1/cards/virtual</code></div>
+                        <div class="api__endpoint"><span class="api__method api__method--get">GET</span><code>/api/v1/analytics/dashboard</code></div>
+                        <div class="api__endpoint"><span class="api__method api__method--del">DEL</span><code>/api/v1/webhooks/{id}</code></div>
+                    </div>
+
+                    <h3 class="api__section-title" style="margin-top:32px">Características</h3>
+                    <ul class="api__features">
+                        <li>Autenticación OAuth 2.0 + API Keys</li>
+                        <li>Idempotencia nativa por externalId</li>
+                        <li>Webhooks con reintentos exponenciales</li>
+                        <li>Rate limiting configurable por tier</li>
+                        <li>Sandbox completo para testing</li>
+                        <li>SDKs: Node.js, Python, Go, Java, .NET</li>
+                        <li>Documentación OpenAPI 3.0 interactiva</li>
+                        <li>Versionado de API con deprecation notices</li>
+                    </ul>
+                </div>
+                <div class="api__code">
+                    <div class="code-block">
+                        <div class="code-block__header">
+                            <span class="code-block__dot"></span>
+                            <span class="code-block__dot"></span>
+                            <span class="code-block__dot"></span>
+                            <span class="code-block__title">create-payout.sh</span>
+                        </div>
+                        <pre class="code-block__body"><code>curl -X POST https://api.novacore.mx/v1/payouts \
+  -H "Authorization: Bearer tk_live_..." \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: PAY-20260319-001" \
+  -d '{
+    "externalId": "PAY-20260319-001",
+    "source_account": "NC-ACC-001",
+    "destination": {
+      "clabe": "012180001234567890",
+      "beneficiary": "Juan Pérez",
+      "institution": "BBVA"
+    },
+    "amount": {
+      "value": 15000.00,
+      "currency": "MXN"
+    },
+    "concept": "Pago de servicio",
+    "metadata": {
+      "invoice": "INV-2026-0319",
+      "department": "operations"
+    },
+    "callback_url": "https://tu-sistema.com/webhook"
+  }'</code></pre>
+                    </div>
+                    <div class="code-block" style="margin-top:16px">
+                        <div class="code-block__header">
+                            <span class="code-block__dot"></span>
+                            <span class="code-block__dot"></span>
+                            <span class="code-block__dot"></span>
+                            <span class="code-block__title">response.json — 200 OK</span>
+                        </div>
+                        <pre class="code-block__body"><code>{
+  "id": "NP-a1b2c3d4",
+  "status": "processing",
+  "tracking_key": "NC20260319ABCDEF",
+  "amount": {
+    "value": 15000.00,
+    "currency": "MXN"
+  },
+  "fees": {
+    "spei": 3.50,
+    "platform": 0.00
+  },
+  "estimated_arrival": "2026-03-19T14:30:00Z",
+  "created_at": "2026-03-19T14:29:57Z"
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section class="sec" id="security">
+        <div class="container">
+            <div class="section-head anim">
+                <span class="tag">Seguridad</span>
+                <h2 class="title-lg">Protección de<br><span class="grad-text">grado financiero</span></h2>
+                <p class="subtitle">Construido con los mismos estándares que usan los bancos más grandes. Cada operación está protegida, verificada y auditada.</p>
+            </div>
+            <div class="sec-grid">
+                <div class="sec-card anim">
+                    <div class="sec-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="10" width="20" height="14" rx="3"/><circle cx="14" cy="17" r="2" fill="currentColor" stroke="none"/><path d="M8 10V7a6 6 0 0112 0v3" opacity="0.4"/></svg></div>
+                    <h4>Autenticación 2FA/MFA</h4>
+                    <p>TOTP obligatorio para operaciones sensibles. Soporte para biometría, llaves hardware FIDO2 y autenticación adaptativa.</p>
+                </div>
+                <div class="sec-card anim">
+                    <div class="sec-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 22c4-2 6-8 8-8s2 4 4 4 4-6 8-8"/><path d="M4 24h20" opacity="0.4"/></svg></div>
+                    <h4>Firmas digitales RSA</h4>
+                    <p>Validación RSA-SHA256 en cada webhook y transacción. IP whitelist y mutual TLS para endpoints críticos.</p>
+                </div>
+                <div class="sec-card anim">
+                    <div class="sec-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h12l4 4v16a2 2 0 01-2 2H6a2 2 0 01-2-2V8l4-4z"/><path d="M10 14l3 3 5-5"/></svg></div>
+                    <h4>Operaciones atómicas</h4>
+                    <p>Validación de saldo y registro en una sola operación de base de datos. Sin doble-gasto, sin duplicados, sin race conditions.</p>
+                </div>
+                <div class="sec-card anim">
+                    <div class="sec-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="14" cy="12" r="8" opacity="0.3"/><circle cx="14" cy="12" r="3"/><path d="M14 20v6" opacity="0.4"/><path d="M10 26h8"/></svg></div>
+                    <h4>Auditoría inmutable</h4>
+                    <p>Log de todas las operaciones con geolocalización, dispositivo, IP y user agent. Historial append-only no eliminable.</p>
+                </div>
+                <div class="sec-card anim">
+                    <div class="sec-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 4L4 9v6c0 7 4.5 12 10 14 5.5-2 10-7 10-14V9L14 4z"/><path d="M14 12v4M14 18v1" opacity="0.5"/></svg></div>
+                    <h4>Cifrado end-to-end</h4>
+                    <p>TLS 1.3 en tránsito, AES-256 en reposo. HSM para gestión de llaves. Certificados rotados automáticamente.</p>
+                </div>
+                <div class="sec-card anim">
+                    <div class="sec-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="4" width="20" height="20" rx="3" opacity="0.3"/><path d="M8 10h12M8 14h10M8 18h6"/></svg></div>
+                    <h4>Zero-trust access</h4>
+                    <p>28 permisos granulares en 10 categorías. RBAC + ABAC. Sesiones con expiración, bloqueo por intentos fallidos.</p>
+                </div>
+                <div class="sec-card anim">
+                    <div class="sec-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="14" cy="14" r="10"/><path d="M14 4a10 10 0 010 20" fill="rgba(255,136,0,0.1)" stroke="none"/><path d="M9 9l10 10M19 9l-10 10" opacity="0.4"/></svg></div>
+                    <h4>Detección de fraude</h4>
+                    <p>Motor de reglas + modelos ML para detección en tiempo real. Velocity checks, device fingerprinting y behavioral analytics.</p>
+                </div>
+                <div class="sec-card anim">
+                    <div class="sec-card__icon"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 14h20"/><path d="M14 4v20"/><rect x="8" y="8" width="12" height="12" rx="2" opacity="0.3"/><circle cx="14" cy="14" r="2" fill="currentColor" stroke="none"/></svg></div>
+                    <h4>SOC 2 Type II</h4>
+                    <p>Auditoría anual SOC 2. Certificaciones ISO 27001, PCI DSS Level 1 y cumplimiento con estándares CNBV.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPLIANCE -->
+    <section class="compliance" id="compliance">
+        <div class="container">
+            <div class="section-head anim">
+                <span class="tag">Compliance</span>
+                <h2 class="title-lg">Regulación y cumplimiento<br><span class="grad-text">desde el día uno</span></h2>
+                <p class="subtitle">Diseñado para cumplir con la normativa financiera mexicana y estándares internacionales.</p>
+            </div>
+            <div class="compliance__grid">
+                <div class="compliance__col anim">
+                    <h3>KYC / KYB</h3>
+                    <p>Verificación de identidad digital completa para personas físicas y morales.</p>
+                    <ul>
+                        <li>Verificación de INE/IFE con NFC y biometría facial</li>
+                        <li>eKYC con validación en RENAPO y CURP</li>
+                        <li>Due diligence estándar y reforzada (CDD/EDD)</li>
+                        <li>Screening de PEPs y listas de sanciones</li>
+                        <li>Identificación de beneficiario final (UBO)</li>
+                        <li>Revisión periódica automática de KYC</li>
+                    </ul>
+                </div>
+                <div class="compliance__col anim">
+                    <h3>PLD / AML</h3>
+                    <p>Monitoreo de prevención de lavado de dinero con motor de reglas e inteligencia artificial.</p>
+                    <ul>
+                        <li>Monitoreo transaccional en tiempo real</li>
+                        <li>Detección de patrones: estructuración, layering</li>
+                        <li>Screening OFAC, EU, ONU y listas CNBV</li>
+                        <li>Generación automática de reportes de operaciones inusuales</li>
+                        <li>Case management para investigación</li>
+                        <li>Reportes a UIF (Unidad de Inteligencia Financiera)</li>
+                    </ul>
+                </div>
+                <div class="compliance__col anim">
+                    <h3>Reportes regulatorios</h3>
+                    <p>Generación automática de todos los reportes requeridos por autoridades mexicanas.</p>
+                    <ul>
+                        <li>Reportes CNBV (R01-R28)</li>
+                        <li>Reportes Banxico (operaciones, reservas)</li>
+                        <li>Reportes SAT (CFDI, retenciones)</li>
+                        <li>FATCA y CRS para intercambio de información</li>
+                        <li>IFRS 9 / NIF para provisiones crediticias</li>
+                        <li>Auditoría trail inmutable para inspecciones</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="compliance__certs anim">
+                <div class="compliance__cert">
+                    <span class="compliance__cert-icon">ISO</span>
+                    <span>ISO 27001</span>
+                </div>
+                <div class="compliance__cert">
+                    <span class="compliance__cert-icon">PCI</span>
+                    <span>PCI DSS L1</span>
+                </div>
+                <div class="compliance__cert">
+                    <span class="compliance__cert-icon">SOC</span>
+                    <span>SOC 2 Type II</span>
+                </div>
+                <div class="compliance__cert">
+                    <span class="compliance__cert-icon">CNBV</span>
+                    <span>Normativa CNBV</span>
+                </div>
+                <div class="compliance__cert">
+                    <span class="compliance__cert-icon">GDPR</span>
+                    <span>Protección de datos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="usecases" id="usecases">
+        <div class="container">
+            <div class="section-head anim">
+                <span class="tag">Casos de uso</span>
+                <h2 class="title-lg">Construido para<br><span class="grad-text">múltiples industrias</span></h2>
+            </div>
+            <div class="usecase-grid">
+                <div class="usecase-card anim">
+                    <div class="usecase-card__num">01</div>
+                    <h3>Neobancos</h3>
+                    <p>Lanza tu neobanco en semanas con cuentas digitales, tarjetas virtuales, pagos SPEI y onboarding 100% digital. Sin necesidad de construir infraestructura bancaria desde cero.</p>
+                </div>
+                <div class="usecase-card anim">
+                    <div class="usecase-card__num">02</div>
+                    <h3>SOFIPOs y SOFOMes</h3>
+                    <p>Core bancario que cumple con toda la normativa CNBV. Gestión de créditos, captación, reportes regulatorios y monitoreo PLD integrado.</p>
+                </div>
+                <div class="usecase-card anim">
+                    <div class="usecase-card__num">03</div>
+                    <h3>Fintechs de pagos</h3>
+                    <p>Procesa miles de transacciones SPEI por segundo. Dispersiones masivas, split payments, comisiones en cascada y reconciliación automática.</p>
+                </div>
+                <div class="usecase-card anim">
+                    <div class="usecase-card__num">04</div>
+                    <h3>Exchanges y cripto</h3>
+                    <p>Rampas fiat-cripto con cuentas CLABE dedicadas, detección de depósitos en tiempo real y dispersiones automáticas para retiros.</p>
+                </div>
+                <div class="usecase-card anim">
+                    <div class="usecase-card__num">05</div>
+                    <h3>Empresas de remesas</h3>
+                    <p>Recepción y envío de pagos internacionales con FX integrado, compliance automatizado y dispersión last-mile via SPEI.</p>
+                </div>
+                <div class="usecase-card anim">
+                    <div class="usecase-card__num">06</div>
+                    <h3>Embedded finance</h3>
+                    <p>Integra servicios financieros en tu plataforma con nuestras APIs BaaS. Ofrece cuentas, pagos y tarjetas sin ser banco.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-head anim">
+                <span class="tag">Planes</span>
+                <h2 class="title-lg">Escala a tu<br><span class="grad-text">ritmo</span></h2>
+                <p class="subtitle">Sin costos de implementación. Paga solo por lo que usas con precios transparentes.</p>
+            </div>
+            <div class="pricing__grid">
+                <div class="pricing__card anim">
+                    <div class="pricing__header">
+                        <h3>Startup</h3>
+                        <p>Para fintechs en etapa temprana</p>
+                    </div>
+                    <div class="pricing__price">
+                        <span class="pricing__amount">$15,000</span>
+                        <span class="pricing__period">MXN / mes</span>
+                    </div>
+                    <ul class="pricing__features">
+                        <li>Hasta 5,000 transacciones/mes</li>
+                        <li>3 módulos core incluidos</li>
+                        <li>5 cuentas CLABE</li>
+                        <li>API + Sandbox</li>
+                        <li>Soporte por email (48h)</li>
+                        <li>Dashboard básico</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--glass btn--full">Comenzar</a>
+                </div>
+                <div class="pricing__card pricing__card--featured anim">
+                    <div class="pricing__popular">Más popular</div>
+                    <div class="pricing__header">
+                        <h3>Growth</h3>
+                        <p>Para fintechs en crecimiento</p>
+                    </div>
+                    <div class="pricing__price">
+                        <span class="pricing__amount">$45,000</span>
+                        <span class="pricing__period">MXN / mes</span>
+                    </div>
+                    <ul class="pricing__features">
+                        <li>Hasta 50,000 transacciones/mes</li>
+                        <li>Todos los módulos</li>
+                        <li>CLABEs ilimitadas</li>
+                        <li>API + Sandbox + SDKs</li>
+                        <li>Soporte prioritario (4h)</li>
+                        <li>Analytics avanzado</li>
+                        <li>Multi-empresa</li>
+                        <li>Webhooks avanzados</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--primary btn--full">Comenzar</a>
+                </div>
+                <div class="pricing__card anim">
+                    <div class="pricing__header">
+                        <h3>Enterprise</h3>
+                        <p>Para instituciones reguladas</p>
+                    </div>
+                    <div class="pricing__price">
+                        <span class="pricing__amount">Custom</span>
+                        <span class="pricing__period">Cotización personalizada</span>
+                    </div>
+                    <ul class="pricing__features">
+                        <li>Transacciones ilimitadas</li>
+                        <li>Todos los módulos + custom</li>
+                        <li>Infraestructura dedicada</li>
+                        <li>SLA 99.99% con penalidades</li>
+                        <li>Soporte 24/7 con CSM dedicado</li>
+                        <li>On-premise / hybrid disponible</li>
+                        <li>Compliance personalizado</li>
+                        <li>Integración white-label</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--glass btn--full">Contactar ventas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-head anim">
+                <span class="tag">FAQ</span>
+                <h2 class="title-lg">Preguntas<br><span class="grad-text">frecuentes</span></h2>
+            </div>
+            <div class="faq__list">
+                <div class="faq__item anim">
+                    <button class="faq__question">
+                        <span>¿Qué tipo de instituciones pueden usar Novacore?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Novacore está diseñado para SOFIPOs, SOFOMes, neobancos, fintechs de pagos, exchanges, empresas de remesas y cualquier empresa que necesite infraestructura de pagos o servicios financieros integrados. También ofrecemos BaaS para empresas no financieras que quieran ofrecer servicios financieros embebidos.</p>
+                    </div>
+                </div>
+                <div class="faq__item anim">
+                    <button class="faq__question">
+                        <span>¿Cuánto tiempo toma la integración?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Una integración básica con pagos SPEI toma entre 1-2 semanas. Una implementación completa con múltiples módulos puede estar lista en 4-8 semanas. Ofrecemos sandbox desde el día uno para que tu equipo empiece a desarrollar inmediatamente.</p>
+                    </div>
+                </div>
+                <div class="faq__item anim">
+                    <button class="faq__question">
+                        <span>¿Novacore está regulado?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Novacore opera como proveedor de tecnología (ITF) para instituciones financieras reguladas. Nuestros procesadores bancarios están conectados directamente a SPEI a través de participantes autorizados por Banxico. Cumplimos con ISO 27001, PCI DSS y los lineamientos de la CNBV.</p>
+                    </div>
+                </div>
+                <div class="faq__item anim">
+                    <button class="faq__question">
+                        <span>¿Pueden manejar nuestro volumen de transacciones?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Nuestra arquitectura soporta más de 10,000 transacciones por segundo con auto-scaling horizontal. Procesamos millones de transacciones diarias para nuestros clientes actuales. Para necesidades enterprise, ofrecemos infraestructura dedicada con capacidad garantizada.</p>
+                    </div>
+                </div>
+                <div class="faq__item anim">
+                    <button class="faq__question">
+                        <span>¿Ofrecen soporte para migración desde otro core?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Sí. Tenemos un equipo especializado en migraciones que ha movido instituciones desde cores legacy. El proceso incluye mapeo de datos, migración incremental, periodo de operación paralela y cutover coordinado con cero downtime.</p>
+                    </div>
+                </div>
+                <div class="faq__item anim">
+                    <button class="faq__question">
+                        <span>¿Qué pasa si necesito un módulo personalizado?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Nuestra arquitectura es composable. Puedes usar nuestros módulos estándar o solicitar desarrollo personalizado. También ofrecemos un Product Builder sin código para crear productos financieros custom sin necesidad de desarrollo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta__box anim">
+                <div class="cta__orb"></div>
+                <h2 class="title-lg">¿Listo para modernizar<br><span class="grad-text">tu infraestructura bancaria?</span></h2>
+                <p class="subtitle">Agenda una demo personalizada y descubre cómo Novacore puede potenciar tu operación financiera.</p>
+                <div class="cta__btns">
+                    <a href="https://wa.me/5213332272003" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <span>Agendar demo</span>
+                    </a>
+                    <a href="mailto:direccion@novacoin.mx" class="btn btn--glass btn--lg">direccion@novacoin.mx</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="/" class="nav__logo">
+                        <div class="nav__logo-hex"><svg viewBox="0 0 40 40" fill="none"><path d="M20 4L34 12V28L20 36L6 28V12L20 4Z" stroke="url(#lg2)" stroke-width="1.5" fill="none"/><path d="M15 17L20 13L25 17V23L20 27L15 23Z" fill="url(#lg2)"/><defs><linearGradient id="lg2" x1="6" y1="4" x2="34" y2="36"><stop stop-color="#ff8800"/><stop offset="1" stop-color="#ff2f5f"/></linearGradient></defs></svg></div>
+                        <span>Nova<em>core</em></span>
+                    </a>
+                    <p>Plataforma de core bancario cloud-native para instituciones financieras de nueva generación en México y LATAM.</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Plataforma</h4>
+                    <a href="#platform">Overview</a>
+                    <a href="#modules">Módulos</a>
+                    <a href="#architecture">Arquitectura</a>
+                    <a href="#api">API docs</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Seguridad</h4>
+                    <a href="#security">Seguridad</a>
+                    <a href="#compliance">Compliance</a>
+                    <a href="#usecases">Casos de uso</a>
+                    <a href="#pricing">Planes</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Empresa</h4>
+                    <a href="#contact">Contacto</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="https://wa.me/5213332272003" target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="mailto:direccion@novacoin.mx">Email</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <span>&copy; 2026 Novacore by NovaCoin. Todos los derechos reservados.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
